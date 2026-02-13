@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bggjmftn84ype"]
+
+[ext_resource type="Script" uid="uid://bm3bgb322ddgr" path="res://script/car.gd" id="1_c35m8"]
+[ext_resource type="Texture2D" uid="uid://dhplpu5dp2ahy" path="res://skins/carr.png" id="2_qt2eu"]
+
+[node name="Car" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -17.0
+offset_right = 18.0
+offset_bottom = 23.0
+script = ExtResource("1_c35m8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(47, 30)
+scale = Vector2(0.687549, 0.687549)
+texture = ExtResource("2_qt2eu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 4.0
+offset_right = 25.0
+offset_bottom = 46.0
+scale = Vector2(0.794309, 0.794309)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "ID"
+horizontal_alignment = 1

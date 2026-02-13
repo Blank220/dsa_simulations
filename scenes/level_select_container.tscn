@@ -1,0 +1,163 @@
+[gd_scene load_steps=12 format=3 uid="uid://dl4u3ism0t15f"]
+
+[ext_resource type="FontFile" uid="uid://cl1kq2l1nkmar" path="res://skins/Early GameBoy.ttf" id="1_dt2v5"]
+[ext_resource type="Texture2D" uid="uid://bwqxmxkoirmd6" path="res://skins/Summer6.png" id="1_oqb3l"]
+[ext_resource type="Script" uid="uid://ce4exxhgqobt4" path="res://script/level_select_container.gd" id="2_oqb3l"]
+[ext_resource type="AudioStream" uid="uid://qlsdyeg8rc0s" path="res://music/Terraria Music - Title Screen.mp3" id="4_jdn0a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqb3l"]
+texture = ExtResource("1_oqb3l")
+modulate_color = Color(0.585062, 0.585062, 0.585062, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtw2f"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oa1go"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0.960351, 0.960351, 0.960351, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdn0a"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Panel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -639.0
+offset_top = -359.0
+offset_right = 642.0
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oqb3l")
+script = ExtResource("2_oqb3l")
+
+[node name="LevelSelectContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.75
+offset_top = -150.5
+offset_right = 160.75
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="BinaryTree" type="Button" parent="LevelSelectContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dt2v5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtw2f")
+text = "Binary Tree"
+
+[node name="CarStackParking" type="Button" parent="LevelSelectContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dt2v5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oa1go")
+text = "Car Parking (STACK)"
+
+[node name="CarQueueParking" type="Button" parent="LevelSelectContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dt2v5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
+text = "Car Parking (QUEUE)
+"
+
+[node name="Tower_of_hanoi" type="Button" parent="LevelSelectContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dt2v5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jk1qb")
+text = "Tower of Hanoi
+"
+
+[node name="Binary_search_tree" type="Button" parent="LevelSelectContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_dt2v5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5dd4i")
+text = "Binary Search Tree"
+
+[node name="Exitbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1167.0
+offset_top = 25.0
+offset_right = 1238.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_jdn0a")
+text = "BACK"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(644, 366)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jdn0a")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -615.5
+offset_top = -261.5
+offset_right = 622.5
+offset_bottom = -167.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.52549, 0, 1)
+theme_override_fonts/font = ExtResource("1_dt2v5")
+theme_override_font_sizes/font_size = 75
+text = "Simulation valley"

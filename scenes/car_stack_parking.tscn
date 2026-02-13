@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://y6c1j216r3ok"]
+
+[ext_resource type="Script" uid="uid://b4vqnhde17r3y" path="res://script/car_stack_parking.gd" id="1_atc3b"]
+[ext_resource type="PackedScene" uid="uid://cer4336rvre62" path="res://scenes/exit.tscn" id="2_6jfx0"]
+[ext_resource type="Texture2D" uid="uid://ci0q6cpjul4e4" path="res://skins/Garden_park.jpg" id="2_27h0j"]
+[ext_resource type="Texture2D" uid="uid://fdisksb1tk1" path="res://skins/TEMPparking.png" id="3_kcd6k"]
+[ext_resource type="FontFile" uid="uid://xdxodc064oqe" path="res://skins/rainyhearts.ttf" id="4_3obi6"]
+[ext_resource type="AudioStream" uid="uid://sm78wg2bbodj" path="res://music/Terraria - Hallow.mp3" id="6_aqxyc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqxyc"]
+bg_color = Color(0.147672, 0.147672, 0.147672, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 15
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 13
+
+[node name="Garage" type="Node2D"]
+script = ExtResource("1_atc3b")
+
+[node name="GardenPark" type="Sprite2D" parent="."]
+position = Vector2(0.499954, 7.49998)
+scale = Vector2(0.546482, 0.33113)
+texture = ExtResource("2_27h0j")
+
+[node name="TempParking" type="Sprite2D" parent="."]
+position = Vector2(-121, 280)
+scale = Vector2(0.908368, 0.699984)
+texture = ExtResource("3_kcd6k")
+
+[node name="ParkingArea" type="Node2D" parent="."]
+
+[node name="EnterButton" type="Button" parent="."]
+offset_left = -743.0
+offset_top = -552.0
+offset_right = -618.0
+offset_bottom = -492.0
+theme_override_fonts/font = ExtResource("4_3obi6")
+theme_override_font_sizes/font_size = 25
+text = "ENTER"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = -603.0
+offset_top = -552.0
+offset_right = -462.0
+offset_bottom = -492.0
+theme_override_fonts/font = ExtResource("4_3obi6")
+theme_override_font_sizes/font_size = 26
+text = "EXIT"
+
+[node name="CarIDInput" type="LineEdit" parent="."]
+offset_left = -885.0
+offset_top = -533.0
+offset_right = -762.0
+offset_bottom = -493.0
+
+[node name="LogLabel" type="Label" parent="."]
+offset_left = -874.0
+offset_top = -441.0
+offset_right = -628.0
+offset_bottom = -410.0
+theme_override_fonts/font = ExtResource("4_3obi6")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_aqxyc")
+text = "KAGAWAD ALI"
+
+[node name="exit_button" parent="." instance=ExtResource("2_6jfx0")]
+offset_left = 785.0
+offset_top = -560.0
+offset_right = 922.0
+offset_bottom = -518.0
+theme_override_fonts/font = ExtResource("4_3obi6")
+theme_override_font_sizes/font_size = 31
+
+[node name="Label" type="Label" parent="."]
+offset_left = -518.0
+offset_top = 270.0
+offset_right = -478.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_aqxyc")
+volume_db = 3.0
+autoplay = true
+parameters/looping = true

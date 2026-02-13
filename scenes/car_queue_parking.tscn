@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1wlhyaju2qhf"]
+
+[ext_resource type="Script" uid="uid://brnrnggu2kb3g" path="res://script/car_queue_parking.gd" id="1_p0oe1"]
+[ext_resource type="Texture2D" uid="uid://ci0q6cpjul4e4" path="res://skins/Garden_park.jpg" id="2_bjwu5"]
+[ext_resource type="FontFile" uid="uid://xdxodc064oqe" path="res://skins/rainyhearts.ttf" id="3_p0oe1"]
+[ext_resource type="PackedScene" uid="uid://cer4336rvre62" path="res://scenes/exit.tscn" id="4_mtssc"]
+[ext_resource type="AudioStream" uid="uid://d4mf8hc0bgdqt" path="res://music/Terraria Music - Night.mp3" id="5_bjwu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjwu5"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 7
+
+[node name="Garage_queue" type="Node2D"]
+script = ExtResource("1_p0oe1")
+
+[node name="GardenPark" type="Sprite2D" parent="."]
+position = Vector2(-2.99991, -0.999939)
+scale = Vector2(0.544136, 0.333049)
+texture = ExtResource("2_bjwu5")
+
+[node name="ParkingArea" type="Node2D" parent="."]
+
+[node name="EnterButton" type="Button" parent="."]
+offset_left = -746.0
+offset_top = -545.0
+offset_right = -584.0
+offset_bottom = -470.0
+theme_override_fonts/font = ExtResource("3_p0oe1")
+theme_override_font_sizes/font_size = 25
+text = "ENTER"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = -568.0
+offset_top = -544.0
+offset_right = -423.0
+offset_bottom = -470.0
+theme_override_fonts/font = ExtResource("3_p0oe1")
+theme_override_font_sizes/font_size = 25
+text = "EXIT"
+
+[node name="CarIDInput" type="LineEdit" parent="."]
+offset_left = -886.0
+offset_top = -520.0
+offset_right = -763.0
+offset_bottom = -470.0
+
+[node name="LogLabel" type="Label" parent="."]
+offset_left = -876.0
+offset_top = -435.0
+offset_right = -743.0
+offset_bottom = -411.0
+theme_override_fonts/font = ExtResource("3_p0oe1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjwu5")
+text = "KAGAWAD ALI"
+
+[node name="exit_button" parent="." instance=ExtResource("4_mtssc")]
+offset_left = 803.0
+offset_top = -567.0
+offset_right = 915.0
+offset_bottom = -524.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 315.0
+offset_top = 248.0
+offset_right = 361.0
+offset_bottom = 290.0
+theme_override_font_sizes/font_size = 30
+text = "P"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-9, -100)
+scale = Vector2(1, 1.15)
+points = PackedVector2Array(383, 352, -287, 352)
+
+[node name="Line2D5" type="Line2D" parent="."]
+position = Vector2(1, -707)
+scale = Vector2(1, 1.15)
+points = PackedVector2Array(383, 352, -166, 351.304)
+
+[node name="Line2D6" type="Line2D" parent="."]
+position = Vector2(154, -871)
+scale = Vector2(1, 1.15)
+points = PackedVector2Array(383, 352, -314, 352.174)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(-6, -3)
+points = PackedVector2Array(548, 488, -292, 487)
+
+[node name="Line2D3" type="Line2D" parent="."]
+points = PackedVector2Array(377, 310, 377, -306)
+
+[node name="Line2D4" type="Line2D" parent="."]
+points = PackedVector2Array(536, 487, 538, -466)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bjwu5")
+volume_db = 3.0
+autoplay = true
+parameters/looping = true

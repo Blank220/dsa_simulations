@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://c044ty8k8epxp"]
+
+[node name="Line2D" type="LineEdit"]
+alignment = 1
